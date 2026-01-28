@@ -39,6 +39,11 @@
       padding: 0;
     }
 
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
       background:
@@ -46,7 +51,7 @@
         radial-gradient(900px 700px at 90% 20%, rgba(37, 211, 102, 0.22), transparent 60%),
         linear-gradient(160deg, #070a12 0%, #0b0f1a 40%, #121a33 100%);
       color: var(--text);
-      min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -63,6 +68,7 @@
       backdrop-filter: blur(16px);
       position: relative;
       overflow: hidden;
+      max-height: 100%;
     }
 
     .phone > * {
@@ -277,6 +283,84 @@
       }
       100% {
         opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px), (max-height: 720px) {
+      body {
+        padding: 12px;
+      }
+
+      .phone {
+        padding: 18px 16px 20px;
+        border-radius: 22px;
+      }
+
+      .avatar {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 8px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
+      .tag {
+        margin-top: 6px;
+        font-size: 10px;
+      }
+
+      .card {
+        padding: 12px;
+        margin: 12px 0;
+      }
+
+      .card p,
+      .features li {
+        font-size: 12.5px;
+      }
+
+      .small-note {
+        font-size: 11px;
+      }
+
+      .links {
+        gap: 10px;
+      }
+
+      .link {
+        padding: 12px 14px;
+        font-size: 14px;
+      }
+
+      .link span {
+        font-size: 11px;
+      }
+
+      .cta {
+        margin-top: 12px;
+      }
+
+      .whatsapp {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .footer {
+        margin-top: 10px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-height: 620px) {
+      .phone {
+        transform: scale(0.94);
+        transform-origin: top center;
       }
     }
   </style>
